@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rental Value Analysis</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <h1>What drives rental success in European cities?</h1>
@@ -24,33 +26,79 @@
   <h2>Visualizations</h2>
 
   <div class="viz-block">
-    <h3>Visualization 1 — Title here</h3>
+    <h3>Visualization 1 — The Distribution of AirBnB prices across Cities</h3>
     <iframe src="charts/chart1.html"></iframe>
-    <p>Takeaway: </p>
+    <p>Takeaway: To start, we wanted to determine whether or not location had a significant
+      impact on the listing of AirBnBs. While the dataset included information about distance
+      from metro stations, town centers, and other specific points, this data didn’t mean the
+      quantitative standards for what we intended to be a vague question. Thus, for this
+      visualization, we created a box-and-whisker plot, compiling multiple types of prince
+      data for several different european cities. From this, we could determine that location
+      does indeed play a significant role in the minimum, maximum, and median prices for AirBnBs
+      (with the exact data made visible through tooltips).
+    </p>
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 2 — Title here</h3>
+    <h3>Visualization 2 — The Affordability Gap: How Nightly Prices of AirBnBs compare to Local (City) Salary</h3>
     <iframe src="charts/chart2.html"></iframe>
-    <p>Takeaway:</p>
+    <p>Takeaway: The consumer base for AirBnBs is typically made up of people not from the area like
+      people who need an area to stay at temporarily. However, this understanding then brings the
+      question: Do the prices of AirBnBs depend on their cities, or do the differences presented
+      in our first visualization correlate to another factor we dont see? After creating this
+      scatterplot, which compares the monthly average net salary of our selected cities to the
+      average nightly price of their AirBnBs (with exact data made visible through tooltips),
+      we can see a vaguely upward trend in which the price of an AirBnB generally stays the same
+      around a certain net salary, only spiking in the case of an outlier like Lisbon or as net
+      salary increases drastically. This finding implies that despite the main consumer base being
+      tourists, AirBnB hosts seemingly prefer to set prices not beyond one’s monthly salary.
+    </p>
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 3 — Title here</h3>
+    <h3>Visualization 3 — How Room Type Influences AIrBnB Price</h3>
     <iframe src="charts/chart3.html"></iframe>
-    <p>Takeaway:</p>
+    <p>Takeaway: Once we’d established a connection between location and price, we moved on to
+      explore the products themselves, or the room types for AirBnBs. Although we assumed there was
+      definitely some connection between the rooms and the price, we wouldn’t know what that
+      connection was until it was made visible. This visualization produces three line/area graphs
+      side by side, comparing their average prices per room type to their distance from their city’s
+      center (so that we also took into consideration some level of location data to align with our
+      previous trend). What we found was a repeated pattern where average price decreases the farther
+      an AirBnB is from a city’s center, with entire homes/apartments having the most drastic slope
+      and shared rooms having the least exaggerated. To better interpret the data being shown, we
+      implemented an additional layer of interaction where parts of the graph could be selected to
+      dynamically view average price and the percent of listings within a selection of the graph.
+    </p>
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 4 — Title here</h3>
+    <h3>Visualization 4 — How distance from transportation (metro) Affects Price by Room Type</h3>
     <iframe src="charts/chart4.html"></iframe>
-    <p>Takeaway:</p>
+    <p>Takeaway: So far, we’ve shown that price data is affected by the general location of an AirBnB,
+      the distance of the AirBnB from the central area of a city, and the room type of the AirBnB itself.
+      Our next goal was to determine how much transportation played a role in the price listings of AirBnBs.
+      In this visualization, which takes data from the average price total per AirBnB roomtype and
+      applies it to a heatmap based on distance from metro-stations, we can see that prices generally
+      decrease the further away an AIrBnB is from a metro station. In other words, in addition to the
+      location and type of AirBnB, the ease of movement one has around it is also something that may
+      influence its pricing.
+    </p>
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 5 — Title here (D3)</h3>
+    <h3>Visualization 5 — How Guest Satisfaction Compares to Weekend Premium</h3>
     <iframe src="charts/chart5_d3.html"></iframe>
-    <p>Takeaway: </p>
+    <p>Takeaway: For our final visualization, we intended to focus on how often customers
+      were satisfied with their AirBnBs given weekend premiums (the period during which
+      AirBnBs are more expensive due to higher demand). This grouped bar chart, which includes a
+      toggle for switching between guest satisfaction scores and weekly prices, shows the general
+      tendency of most AirBnBs to price weekend stays somewhat higher than weekdays. Despite this,
+      our data implies that guests are still content with their visits (or, more accurately, that
+      weekend visits don’t significantly influence their satisfaction), and that these price
+      variations do not have an extreme impact on how a consumer feels about their AirBnB, contrary
+      to initial belief.
+    </p>
   </div>
 
   <!-- FINDINGS -->
@@ -58,7 +106,7 @@
   <p>etcetcetc</p>
 
 
-    <!-- REFERENCES -->
+  <!-- REFERENCES -->
   <h2>References</h2>
   <ul>
     <li><a href="#">Reference 1</a></li>
@@ -67,4 +115,5 @@
   </ul>
 
 </body>
+
 </html>
