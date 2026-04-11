@@ -2,7 +2,7 @@ const width = 500;
 const height = 250;
 const margin = { top: 20, right: 20, bottom: 40, left: 50 };
 
-d3.csv("/data/airbnb.csv").then(data => {
+d3.csv("airbnb.csv").then(data => {
     data.forEach(d => {
         d.distance_city_center = +d.distance_city_center;
         d.price_total = +d.price_total;
