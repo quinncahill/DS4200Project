@@ -13,8 +13,7 @@
   <h1>Rental Value Analysis: What drives rental success in European cities?</h1>
   <p>DS4200 Final Project</p>
   <p>Presented by: Amelia Rogers, Oluwadamilare Akinsola and Quinn Cahill </p>
-  <hr />
-
+  <hr/>
   <!-- INTRODUCTION -->
   <h2>Introduction</h2>
   <p> Airbnb, a platform that connects homeowners with travelers seeking rental properties, is a global peer-to-peer service dominating the short-term rental market. Airbnb connects millions of stakeholders across the marketplace: homeowners who are monetizing spare rooms or properties, travelers seeking accommodations, and local communities navigating the presence of tourism on their economies.</p>
@@ -25,14 +24,15 @@
   <p>The dataset contains 51,707 listings across 10 European cities. It features 36 variables, a majority being continuous numeric variables and a smaller mix of categorical variables. The data includes city-level economic data, property characteristics, location metrics, and host details. This dataset is well-suited for our analysis because it combines property level data with economic context, enabling cross-sectional comparisons across market segments. The data is publicly available on Kaggle, uploaded by Youssef Khaled in February, 2025.  </p>
 <p>Several limitations in the dataset must be considered, as they directly impact the visualizations and resulting conclusions. The dataset lacks granular time-based detail, capturing only a binary distinction between weekdays and weekends. This limits our ability to analyze seasonality, recent events, and other demand factors that strongly influence rental success. The data also reflects a single time period, meaning we cannot examine historical trends, long-term market competition, or how Airbnb’s success strategy evolves over time.</p>
 
-</p>
 
 <p> The dataset does not include detailed amenity information, which plays an important role in pricing strategies, limiting our ability to evaluate how amenities influence rental value. Additionally the economic indicators provided in the dataset are aggregated by city-level and could obscure variance between neighborhoods. For example, a city may have a high overall crime index, but still include very safe, high-value neighborhoods. As a result, neighborhood-level differences and community characteristics can show patterns that city-wide averages hide. Overall, our analysis represents a snapshot in time, and future research including more granular data would help validate our findings about what drives rental success in European cities.</p>
 <!-- VISUALIZATIONS -->
   <h2>Visualizations</h2>
+  <p>The five visualizations below examine Airbnb pricing from different angles, moving from a city-level overview of price distributions toward more granular comparisons of affordability, location effects, and booking timing. </p>
 
   <div class="viz-block">
-    <h3>Visualization 1 — The Distribution of AirBnB prices across Cities</h3>
+    <h3> 1. The Distribution of Airbnb Prices Across Cities: How Does City-Level Market Context Shape Airbnb Price Distributions?</h3>
+    <p> This box plot shows the distribution of nightly Airbnb prices across all 10 cities, broken down by room type. It provides a baseline overview of median prices, spread, and outliers, establishing that European Airbnb markets vary significantly in both price level and variability.</p>
     <iframe src="charts/chart1.html"></iframe>
     <p>Takeaway: To start, we wanted to determine whether or not location had a significant
       impact on the listing of AirBnBs. While the dataset included information about distance
@@ -46,7 +46,7 @@
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 2 — The Affordability Gap: How Nightly Prices of AirBnBs compare to Local (City) Salary</h3>
+    <h3> 2. Nightly Airbnb Prices vs. Local Monthly Net Salary: Do AirBnB Hosts Price Relative to Local Purchasing Power?</h3>
     <iframe src="charts/chart2.html"></iframe>
     <p>Takeaway: The consumer base for AirBnBs is typically made up of people not from the area like
       people who need an area to stay at temporarily. However, this understanding then brings the
@@ -62,7 +62,7 @@
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 3 — How Room Type Influences AIrBnB Price</h3>
+    <h3> 3. Average Price by Room Type and Distance from City Center: How Does Distance from the City Center Interact with Room Type to Determine Price?</h3>
     <iframe src="charts/chart3Container.html"></iframe>
     <p>Takeaway: Once we’d established a connection between location and price, we moved on to
       explore the products themselves, or the room types for AirBnBs. Although we assumed there was
@@ -79,7 +79,7 @@
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 4 — How distance from transportation (metro) Affects Price by Room Type</h3>
+    <h3> 4. Average Price by Room Type and Distance from Public Transit: Does Proximity to Public Transportation Independently Influence Airbnb Pricing?</h3>
     <iframe src="charts/chart4.html"></iframe>
     <p>Takeaway: So far, we’ve shown that price data is affected by the general location of an AirBnB,
       the distance of the AirBnB from the central area of a city, and the room type of the AirBnB itself.
@@ -93,7 +93,7 @@
   </div>
 
   <div class="viz-block">
-    <h3>Visualization 5 — How Guest Satisfaction Compares to Weekend Premium</h3>
+    <h3> 5. Guest Satisfaction Scores and Nightly Prices on Weekdays vs. Weekends: Do Weekend Demand Premiums Affect Guest Satisfaction Across European Markets?</h3>
     <iframe src="charts/chart5.html"></iframe>
     <p>Takeaway: For our final visualization, we intended to focus on how often customers
       were satisfied with their AirBnBs given weekend premiums (the period during which
@@ -109,10 +109,13 @@
 
   <!-- FINDINGS -->
   <h2>Summary & Findings</h2>
-  <p>etcetcetc</p>
+  <p>Our analysis reveals three consistent drivers of Airbnb pricing across European cities.</p>
+  <p> First, location is the strongest predictor. Both city-level market differences and proximity to city centers drive significant price variation, with homes showing the steepest distance-based price decline</p>
+<p>Second, local economic context matters: cities with higher average net salaries command higher nightly rates, suggesting hosts implicitly price relative to local purchasing power.  </p>
+<p> Third, transportation access (metro proximity) independently influences price across all room types, reinforcing that accessibility is a valued amenity even when controlling for city center distance. </p>
+<p> Weekend premiums exist across cities but do not meaningfully reduce guest satisfaction scores, suggesting demand is relatively inelastic to moderate price increases. Future work should incorporate time-series data to capture seasonality, neighborhood-level economic indicators to reduce aggregation bias, and amenity-level detail to isolate the contribution of individual listing features to rental success.</p>
 
-
-  <!-- REFERENCES -->
+<!-- REFERENCES -->
   <h2>References</h2>
   <ul>
     <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0959652619306213">Gyódi, K. (2019). Airbnb in European cities: Business as usual or true sharing economy? Journal of Cleaner Production, 221, 536–551.</a></li>
