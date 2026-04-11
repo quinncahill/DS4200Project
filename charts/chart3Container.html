@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AirBnB Distance vs Price</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .facet {
+      margin-bottom: 40px;
+    }
+
+    .area {
+      fill: steelblue;
+      opacity: 0.4;
+    }
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 2px;
+    }
+
+    .brush .selection {
+      fill: orange;
+      fill-opacity: 0.3;
+    }
+
+    .stats {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>AirBnB Distance vs Price by Room Type</h2>
+
+<div id="charts"></div>
+
+<h3>Selected Band Statistics</h3>
+<div id="stats">
+  <p>Average Price: <span id="avgPrice">-</span></p>
+  <p>% of Listings: <span id="pctListings">-</span></p>
+</div>
+
+<script src="chart3.js"></script>
+</body>
+</html>
