@@ -2,7 +2,7 @@ const width = 500;
 const height = 250;
 const margin = { top: 20, right: 20, bottom: 40, left: 50 };
 
-d3.csv("/DS4200Project-main/data/airbnb.csv").then(data => {
+d3.csv("/data/airbnb.csv").then(data => {
     data.forEach(d => {
         d.distance_city_center = +d.distance_city_center;
         d.price_total = +d.price_total;
@@ -22,8 +22,7 @@ d3.csv("/DS4200Project-main/data/airbnb.csv").then(data => {
     const container = d3.select("#charts");
 
     // ---- USED FOR COLORS?
-    let colorIndex = 0;
-    const color = ["#1f77b4", "#ff7f0e", "#2ca02c"]; 
+    const colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]; 
 
     roomTypes.forEach(room => {
         const roomData = data.filter(d => d.room_type === room);
@@ -59,23 +58,16 @@ d3.csv("/DS4200Project-main/data/airbnb.csv").then(data => {
             .x(d => x((d.x0 + d.x1) / 2))
             .y(d => y(d.avgPrice));
 
-        // ------ COLOR IMPLEMENTATION STARTS HERE ------
+        // ------ COLOR IMPLEMENTATION SHOULD BE HERE ------
         svg.append("path")
             .datum(bins)
             .attr("class", "area")
-            .attr("fill", color[colorIndex])
-            .attr("opacity", 0.3)
             .attr("d", area);
 
         svg.append("path")
             .datum(bins)
             .attr("class", "line")
-            .attr("stroke", color[colorIndex])
-            .attr("stroke-width", 2)
-            .attr("fill", "none")
             .attr("d", line);
-
-        colorIndex = colorIndex + 1;
 
         // Axes Start Here.
         svg.append("g")
