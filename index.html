@@ -11,18 +11,92 @@
 <body>
 
   <h1>Rental Value Analysis: What drives rental success in European cities?</h1>
-  <p>DS4200 Final Project</p>
   <p>Presented by: Amelia Rogers, Oluwadamilare Akinsola and Quinn Cahill </p>
   <hr/>
   <!-- INTRODUCTION -->
   <h2>Introduction</h2>
   <p> Airbnb, a platform that connects homeowners with travelers seeking rental properties, is a global peer-to-peer service dominating the short-term rental market. Airbnb connects millions of stakeholders across the marketplace: homeowners who are monetizing spare rooms or properties, travelers seeking accommodations, and local communities navigating the presence of tourism on their economies.</p>
-<p> </p>Our project seeks to understand what drives Airbnb pricing by uncovering relationships between property characteristics and local economic attributes. By examining how urban cost of living variables interact with listing features, we seek to identify what makes a rental valuable and how these factors vary across different European markets. 
 <p> As of 2024, the platform hosted 8.1 million listings worldwide and brought in $11.1 in annual revenue, highlighting Airbnb’s considerable dominance in urban markets.With such a large consumer base, Airbnb has faced criticism for contributing to rising rental costs for local residents. Given the flow of demand it channels into cities, the platform can disrupt local housing dynamics and, if unregulated, contribute to market instability and potential harm to communities. By understanding the drivers of rental success, our analysis provides a data-driven foundation for exploring these dynamics across European cities.</p>
+<p> </p>Our project seeks to understand what drives Airbnb pricing by uncovering relationships between property characteristics and local economic attributes. Our analysis is guided by three tasks: understanding how prices are distributed across city markets, examining affordability relative to local wages, and exploring how location and booking timing independently influence pricing. By examining how urban cost of living variables interact with listing features, we seek to identify what makes a rental valuable and how these factors vary across different European markets. 
+
 <!-- DATA -->
   <h2>About the Data</h2>
-  <p>The dataset contains 51,707 listings across 10 European cities. It features 36 variables, a majority being continuous numeric variables and a smaller mix of categorical variables. The data includes city-level economic data, property characteristics, location metrics, and host details. This dataset is well-suited for our analysis because it combines property level data with economic context, enabling cross-sectional comparisons across market segments. The data is publicly available on Kaggle, uploaded by Youssef Khaled in February, 2025.  </p>
-<p>Several limitations in the dataset must be considered, as they directly impact the visualizations and resulting conclusions. The dataset lacks granular time-based detail, capturing only a binary distinction between weekdays and weekends. This limits our ability to analyze seasonality, recent events, and other demand factors that strongly influence rental success. The data also reflects a single time period, meaning we cannot examine historical trends, long-term market competition, or how Airbnb’s success strategy evolves over time.</p>
+  <p>The dataset contains 51,707 listings across 10 European cities. It features 36 variables, a majority being continuous numeric variables and a smaller mix of categorical variables. The data includes city-level economic data, property characteristics, location metrics, and host details. This dataset is well-suited for our analysis because it combines property level data with economic context, enabling cross-sectional comparisons across market segments. The data is publicly available on Kaggle, uploaded by Youssef Khaled in February, 2025. The table below indicates the key variables used across our 5 visualiations. </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>price_total</td>
+        <td>Total nightly price (€)</td>
+        <td>Continuous</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>room_type</td>
+        <td>Entire home, private room, or shared room</td>
+        <td>Categorical</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>city</td>
+        <td>City the listing is located in</td>
+        <td>Categorical</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>day_type</td>
+        <td>Weekday or weekend listing</td>
+        <td>Categorical</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>distance_city_center</td>
+        <td>Distance from city center (km)</td>
+        <td>Continuous</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>distance_metro</td>
+        <td>Distance from nearest metro station (km)</td>
+        <td>Continuous</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>guest_satisfaction_score</td>
+        <td>Overall guest rating (0–100)</td>
+        <td>Continuous</td>
+        <td>Listing</td>
+      </tr>
+      <tr>
+        <td>Monthly_Average_Net_salary</td>
+        <td>Average monthly net salary (€)</td>
+        <td>Continuous</td>
+        <td>City</td>
+      </tr>
+      <tr>
+        <td>affordability_ratio</td>
+        <td>Average nightly price divided by average daily salary — derived variable</td>
+        <td>Continuous</td>
+        <td>City</td>
+      </tr>
+      <tr>
+        <td>distance_bin</td>
+        <td>Metro distance grouped into bands: &lt;0.5km, 0.5-1km, 1-2km, 2-5km, 5km+</td>
+        <td>Ordinal</td>
+        <td>Listing</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Several limitations in the dataset must be considered, as they directly impact the visualizations and resulting conclusions. The dataset lacks granular time-based detail, capturing only a binary distinction between weekdays and weekends. This limits our ability to analyze seasonality, recent events, and other demand factors that strongly influence rental success. The data also reflects a single time period, meaning we cannot examine historical trends, long-term market competition, or how Airbnb’s success strategy evolves over time.</p>
+
 
 
 <p> The dataset does not include detailed amenity information, which plays an important role in pricing strategies, limiting our ability to evaluate how amenities influence rental value. Additionally the economic indicators provided in the dataset are aggregated by city-level and could obscure variance between neighborhoods. For example, a city may have a high overall crime index, but still include very safe, high-value neighborhoods. As a result, neighborhood-level differences and community characteristics can show patterns that city-wide averages hide. Overall, our analysis represents a snapshot in time, and future research including more granular data would help validate our findings about what drives rental success in European cities.</p>
@@ -32,17 +106,10 @@
 
   <div class="viz-block">
     <h3> 1. The Distribution of Airbnb Prices Across Cities: How Does City-Level Market Context Shape Airbnb Price Distributions?</h3>
-    <p><strong>Description:</strong> This box plot shows the full distribution of nightly Airbnb prices across 10 European cities, with cities sorted by median price and price mapped to x-position as a quantitative variable best encoded on a common scale.</p>
+    <p><strong>Description:</strong> This box plot shows the full distribution of nightly Airbnb prices across 10 European cities, with cities sorted by median price on the y-axis and price mapped to x-position as a quantitative variable best encoded on a common scale. Cities are sorted from highest to lowest median price so viewers can immediately rank markets without reading individual values.</p>
     <p><strong>Interaction:</strong> Hover over any box to see exact median, quartile, and whisker values. Tooltips were included because box plots make precise reading difficult at a glance.</p>
 <iframe src="charts/chart1.html"></iframe>
-    <p> <strong>Takeaway: </strong>To start, we wanted to determine whether or not location had a significant
-      impact on the listing of AirBnBs. While the dataset included information about distance
-      from metro stations, town centers, and other specific points, this data didn’t mean the
-      quantitative standards for what we intended to be a vague question. Thus, for this
-      visualization, we created a box-and-whisker plot, compiling multiple types of prince
-      data for several different european cities. From this, we could determine that location
-      does indeed play a significant role in the minimum, maximum, and median prices for AirBnBs
-      (with the exact data made visible through tooltips).
+    <p> <strong>Takeaway: </strong>To start, we wanted to determine whether or not location had a significant impact on the listing of AirBnBs. European cities vary widely in cost of living and tourism demand, making some markets significantly more expensive to travel to than others. While the dataset included information about distance from metro stations, town centers, and other specific points, this data didn't mean the quantitative standards for what we intended to be a vague question. Thus, for this visualization, we created a box-and-whisker plot, compiling multiple types of price data for several different European cities. From this, we could determine that location does indeed play a significant role in the minimum, maximum, and median prices for AirBnBs (with the exact data made visible through tooltips). Amsterdam and Paris sit at the top with the widest spreads, while Athens and Rome are the most affordable markets with tighter distributions. 
     </p>
   </div>
 
@@ -51,16 +118,7 @@
     <p><strong>Description:</strong> This scatter plot maps each city's average monthly net salary to x-position and average nightly price to y-position, with color encoding the affordability ratio on a red-to-green scale for quick visual pattern recognition across cities.</p>
     <p><strong>Interaction:</strong> Hover over any city to see exact salary, average price, affordability ratio, and listing count. Tooltips were included because color communicates the general scale and pattern but cannot provide precise values per city.</p>
     <iframe src="charts/chart2.html"></iframe>
-    <p> <strong>Takeaway:</strong> The consumer base for AirBnBs is typically made up of people not from the area like
-      people who need an area to stay at temporarily. However, this understanding then brings the
-      question: Do the prices of AirBnBs depend on their cities, or do the differences presented
-      in our first visualization correlate to another factor we dont see? To investigate, we created an affordability ratio for each city by dividing the average nightly price by the average daily net salary. This tells us how many days of local wages one night actually costs. After creating this
-      scatterplot, which compares the monthly average net salary of our selected cities to the
-      average nightly price of their AirBnBs (with exact data made visible through tooltips),
-      we can see a vaguely upward trend in which the price of an AirBnB generally stays the same
-      around a certain net salary, only spiking in the case of an outlier like Lisbon or as net
-      salary increases drastically. This finding implies that despite the main consumer base being
-      tourists, AirBnB hosts seemingly prefer to set prices not beyond one’s monthly salary.
+    <p> <strong>Takeaway:</strong> The consumer base for AirBnBs is typically made up of people not from the area like people who need an area to stay at temporarily. However, this understanding then brings the question: Do the prices of AirBnBs depend on their cities, or do the differences presented in our first visualization correlate to another factor we dont see? To investigate, we created an affordability ratio for each city by dividing the average nightly price by the average daily net salary. This tells us how many days of local wages one night actually costs. After creating this scatterplot, which compares the monthly average net salary of our selected cities to the average nightly price of their AirBnBs (with exact data made visible through tooltips), we can see a vaguely upward trend in which the price of an AirBnB generally stays the same around a certain net salary, only spiking in the case of an outlier like Lisbon or as net salary increases drastically. Lisbon has a low average salary of €1,305 per month but a high average nightly price of €383, giving it the worst affordability ratio at 8.8, meaning one night costs nearly 9 days of local wages. Most other cities cluster along a general upward trend where price rises with salary. This suggests that local economic context matters. Cities with higher average net salaries tend to command higher nightly rates, and hosts implicitly price relative to local purchasing power rather than purely to visitor demand.
     </p>
   </div>
 
@@ -77,9 +135,7 @@
       center (so that we also took into consideration some level of location data to align with our
       previous trend). What we found was a repeated pattern where average price decreases the farther
       an AirBnB is from a city’s center, with entire homes/apartments having the most drastic slope
-      and shared rooms having the least exaggerated. To better interpret the data being shown, we
-      implemented an additional layer of interaction where parts of the graph could be selected to
-      dynamically view average price and the percent of listings within a selection of the graph.
+      and shared rooms having the least exaggerated. To better interpret the data being shown, we implemented an additional layer of interaction where parts of the graph could be selected to dynamically view average price and the percent of listings within a selection of the graph. This is useful because it lets viewers pick any distance range they want to focus on and see exactly what prices and listing counts look like in that window. Entire homes maintain the highest price at every distance band, private rooms follow a lower but similar curve, and shared rooms are mostly concentrated near the city center with very few listings further out. The price difference between room types remains consistent across all distance bands, suggesting that room type and location both independently drive price. Lastly, the selection reveals that the majority of listings and highest prices are concentrated within the first few kilometers of the city center, reinforcing that proximity to the center is a key driver of both supply and pricing in the short-term rental market.
     </p>
   </div>
 
@@ -88,7 +144,7 @@
     <p><strong>Description:</strong> This heatmap maps city to y-position and metro distance band paired with room type to x-position, with color intensity encoding average price using a yellow-to-red scale so the most expensive combinations immediately stand out. A heatmap was chosen because it encodes three variables simultaneously in a compact grid, making position unavailable for the price variable so color is the most appropriate channel.</p>
     <p><strong>Interaction:</strong> Click any column group to filter the linked bar chart below and compare average prices across all cities for that distance band and room type. Shift-click to select multiple combinations and compare how cities rank against each other across different segments.</p>
     <iframe src="charts/chart4.html"></iframe>
-    <p> <strong>Takeaway: </strong> So far, we have shown that price data is affected by the general location of an Airbnb, the distance from the city center, and the room type. Our next goal was to determine how much transportation access played a role in pricing. This heatmap applies average price per room type to a grid based on distance from metro stations, where clicking any distance and room type combination filters the bar chart below to show how all cities compare for that segment. We can see that prices generally decrease the further an Airbnb is from a metro station, and that entire homes near transit in cities like Paris and Amsterdam are consistently the highest-value combinations. In other words, ease of movement around a listing independently influences its pricing.
+    <p> <strong>Takeaway: </strong> So far, we have shown that price data is affected by the general location of an Airbnb, the distance from the city center, and the room type. Our next goal was to determine how much transportation access played a role in pricing. This heatmap applies average price per room type to a grid based on distance from metro stations, where clicking any distance and room type combination filters the bar chart below to show how all cities compare for that segment. The heatmap gives a broad overview of which combinations are highest value across the entire dataset, while the bar chart below provides a precise city-level comparison for any specific segment you select. We chose to show both because the heatmap alone cannot tell you how cities rank against each other within a given distance band, the bar chart makes that direct comparison possible. We can see that prices generally decrease the further an Airbnb is from a metro station, and that entire homes near transit in cities like Paris and Amsterdam are consistently the highest-value combinations. In other words, ease of movement around a listing independently influences its pricing, separate from city center distance and room type.
     </p>
   </div>
 
@@ -97,15 +153,7 @@
     <p><strong>Description:</strong> This grouped bar chart maps city to x-position and bar height to median price or satisfaction score, with color encoding day type to allow direct weekday to weekend comparison per city.</p>
 <p><strong>Interaction:</strong> Use the radio buttons to toggle between the price view and the satisfaction score view. This allows viewers to compare whether satisfaction scores differ between weekday and weekend stays and examine whether price changes based on timing correspond to any meaningful change in guest experience.</p>
     <iframe src="charts/chart5.html"></iframe>
-    <p> <strong>Takeaway: </strong> For our final visualization, we intended to focus on how often customers
-      were satisfied with their AirBnBs given weekend premiums (the period during which
-      AirBnBs are more expensive due to higher demand). This grouped bar chart, which includes a
-      toggle for switching between guest satisfaction scores and weekly prices, shows the general
-      tendency of most AirBnBs to price weekend stays somewhat higher than weekdays. Despite this,
-      our data implies that guests are still content with their visits (or, more accurately, that
-      weekend visits don’t significantly influence their satisfaction), and that these price
-      variations do not have an extreme impact on how a consumer feels about their AirBnB, contrary
-      to initial belief.
+    <p> <strong>Takeaway: </strong> For our final visualization, we intended to focus on how often customers were satisfied with their AirBnBs given weekend premiums (the period during which AirBnBs are more expensive due to higher demand). This grouped bar chart, which includes a toggle for switching between guest satisfaction scores and weekly prices, shows the general tendency of most AirBnBs to price weekend stays somewhat higher than weekdays. The toggle is what makes this comparison meaningful and switching between the two views lets you directly test whether cities that charge more on weekends also deliver better guest experiences. What we find is that the satisfaction bars remain nearly identical across weekday and weekend for every city, while the price bars show clear differences, telling us that weekend premiums reflect demand-driven pricing rather than any improvement in guest experience. Despite this, our data implies that guests are still content with their visits, and that these price variations do not have an extreme impact on how a consumer feels about their AirBnB, contrary to initial belief. It is also worth noting that satisfaction scores across all cities are consistently high, ranging from 93 to 98, which suggests that guests who leave reviews tend to rate positively overall. This limits how much the satisfaction metric alone can tell us about the true impact of weekend premiums, and is a limitation worth considering for future analysis.
     </p>
   </div>
 
