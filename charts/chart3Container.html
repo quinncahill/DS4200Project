@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>AirBnB Distance vs Price</title>
@@ -14,18 +15,16 @@
     }
 
     .area {
-      fill: steelblue;
       opacity: 0.4;
     }
 
     .line {
       fill: none;
-      stroke: steelblue;
       stroke-width: 2px;
     }
 
     .brush .selection {
-      fill: orange;
+      fill: gray;
       fill-opacity: 0.3;
     }
 
@@ -35,18 +34,21 @@
     }
   </style>
 </head>
+
 <body>
 
-<h2>AirBnB Distance vs Price by Room Type</h2>
 
-<div id="charts"></div>
+  <h2>AirBnB Distance vs Price by Room Type</h2>
 
-<h3>Selected Band Statistics</h3>
-<div id="stats">
-  <p>Average Price: <span id="avgPrice">-</span></p>
-  <p>% of Listings: <span id="pctListings">-</span></p>
-</div>
+  <div id="charts"></div>
 
-<script src="chart3.js"></script>
+  <h3>Selected Band Statistics</h3>
+  <div id="stats">
+    <p>Average Price: <span id="avgPrice">-</span></p>
+    <p>% of Listings: <span id="pctListings">-</span></p>
+  </div>
+
+  <script src="chart3.js"></script>
 </body>
+
 </html>
