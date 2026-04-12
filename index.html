@@ -35,7 +35,7 @@
     <p><strong>Description:</strong> This box plot shows the full distribution of nightly Airbnb prices across 10 European cities, with cities sorted by median price and price mapped to x-position as a quantitative variable best encoded on a common scale.</p>
     <p><strong>Interaction:</strong> Hover over any box to see exact median, quartile, and whisker values. Tooltips were included because box plots make precise reading difficult at a glance.</p>
 <iframe src="charts/chart1.html"></iframe>
-    <p> <strong>Takeaway:</strong>To start, we wanted to determine whether or not location had a significant
+    <p> <strong>Takeaway: </strong>To start, we wanted to determine whether or not location had a significant
       impact on the listing of AirBnBs. While the dataset included information about distance
       from metro stations, town centers, and other specific points, this data didn’t mean the
       quantitative standards for what we intended to be a vague question. Thus, for this
@@ -85,17 +85,10 @@
 
   <div class="viz-block">
     <h3> 4. Average Price by Room Type and Distance from Public Transit: Does Proximity to Public Transportation Independently Influence Airbnb Pricing?</h3>
-    <p><strong>Description:</strong> This heatmap maps city to y-position and metro distance band paired with room type to x-position, with color intensity encoding average price because the grid structure makes position unavailable for the price variable.</p>
-<p><strong>Interaction:</strong> Click any cell to filter the linked bar chart below, or shift-click to compare multiple city and room type combinations. This allows viewers to isolate specific segments and directly compare average prices across any combination of city, distance band, and room type.</p>
+    <p><strong>Description:</strong> This heatmap maps city to y-position and metro distance band paired with room type to x-position, with color intensity encoding average price using a yellow-to-red scale so the most expensive combinations immediately stand out. A heatmap was chosen because it encodes three variables simultaneously in a compact grid, making position unavailable for the price variable so color is the most appropriate channel.</p>
+    <p><strong>Interaction:</strong> Click any column group to filter the linked bar chart below and compare average prices across all cities for that distance band and room type. Shift-click to select multiple combinations and compare how cities rank against each other across different segments.</p>
     <iframe src="charts/chart4.html"></iframe>
-    <p> <strong>Takeaway: </strong> So far, we’ve shown that price data is affected by the general location of an AirBnB,
-      the distance of the AirBnB from the central area of a city, and the room type of the AirBnB itself.
-      Our next goal was to determine how much transportation played a role in the price listings of AirBnBs.
-      In this visualization, which takes data from the average price total per AirBnB roomtype and
-      applies it to a heatmap based on distance from metro-stations, we can see that prices generally
-      decrease the further away an AIrBnB is from a metro station. In other words, in addition to the
-      location and type of AirBnB, the ease of movement one has around it is also something that may
-      influence its pricing.
+    <p> <strong>Takeaway: </strong> So far, we have shown that price data is affected by the general location of an Airbnb, the distance from the city center, and the room type. Our next goal was to determine how much transportation access played a role in pricing. This heatmap applies average price per room type to a grid based on distance from metro stations, where clicking any distance and room type combination filters the bar chart below to show how all cities compare for that segment. We can see that prices generally decrease the further an Airbnb is from a metro station, and that entire homes near transit in cities like Paris and Amsterdam are consistently the highest-value combinations. In other words, ease of movement around a listing independently influences its pricing.
     </p>
   </div>
 
