@@ -118,7 +118,7 @@ d3.csv("airbnb.csv").then(data => {
         const pct = (selected.length / totalCount) * 100;
 
         d3.select("#avgPrice").text(
-            avgPrice ? `$${avgPrice.toFixed(2)}` : "-"
+            avgPrice ? `€${avgPrice.toFixed(2)}` : "-"
         );
 
         d3.select("#pctListings").text(
