@@ -22,7 +22,7 @@ d3.csv("airbnb.csv").then(data => {
     const container = d3.select("#charts");
 
     // ---- USED FOR COLORS?
-    const colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]; 
+    const colors = ["#1f77b4", "#ff7f0e", "#2ca02c"];
 
     roomTypes.forEach(room => {
         const roomData = data.filter(d => d.room_type === room);
@@ -44,10 +44,24 @@ d3.csv("airbnb.csv").then(data => {
             .attr("height", height);
 
         svg.append("text")
-            .attr("x", margin.left)
+            .attr("x", width / 2)
             .attr("y", 15)
-            .text(room)
-            .style("font-weight", "bold");
+            .attr("text-anchor", "middle")
+            .style("font-weight", "bold")
+            .text(room);
+
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", height - 5)
+            .attr("text-anchor", "middle")
+            .text("Distance to City Center (km)");
+
+        svg.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", 15)
+            .attr("text-anchor", "middle")
+            .text("Average Price (€)");
 
         const area = d3.area()
             .x(d => x((d.x0 + d.x1) / 2))
