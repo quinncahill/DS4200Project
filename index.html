@@ -32,9 +32,10 @@
 
   <div class="viz-block">
     <h3> 1. The Distribution of Airbnb Prices Across Cities: How Does City-Level Market Context Shape Airbnb Price Distributions?</h3>
-    <p> This box plot shows the distribution of nightly Airbnb prices across all 10 cities, broken down by room type. It provides a baseline overview of median prices, spread, and outliers, establishing that European Airbnb markets vary significantly in both price level and variability.</p>
-    <iframe src="charts/chart1.html"></iframe>
-    <p>Takeaway: To start, we wanted to determine whether or not location had a significant
+    <p><strong>Description:</strong> This box plot shows the full distribution of nightly Airbnb prices across 10 European cities, with cities sorted by median price and price mapped to x-position as a quantitative variable best encoded on a common scale.</p>
+    <p><strong>Interaction:</strong> Hover over any box to see exact median, quartile, and whisker values. Tooltips were included because box plots make precise reading difficult at a glance.</p>
+<iframe src="charts/chart1.html"></iframe>
+    <p> <strong>Takeaway:</strong>To start, we wanted to determine whether or not location had a significant
       impact on the listing of AirBnBs. While the dataset included information about distance
       from metro stations, town centers, and other specific points, this data didn’t mean the
       quantitative standards for what we intended to be a vague question. Thus, for this
@@ -47,11 +48,13 @@
 
   <div class="viz-block">
     <h3> 2. Nightly Airbnb Prices vs. Local Monthly Net Salary: Do AirBnB Hosts Price Relative to Local Purchasing Power?</h3>
+    <p><strong>Description:</strong> This scatter plot maps each city's average monthly net salary to x-position and average nightly price to y-position, with color encoding the affordability ratio on a red-to-green scale for quick visual pattern recognition across cities.</p>
+    <p><strong>Interaction:</strong> Hover over any city to see exact salary, average price, affordability ratio, and listing count. Tooltips were included because color communicates the general scale and pattern but cannot provide precise values per city.</p>
     <iframe src="charts/chart2.html"></iframe>
-    <p>Takeaway: The consumer base for AirBnBs is typically made up of people not from the area like
+    <p> <strong>Takeaway:</strong> The consumer base for AirBnBs is typically made up of people not from the area like
       people who need an area to stay at temporarily. However, this understanding then brings the
       question: Do the prices of AirBnBs depend on their cities, or do the differences presented
-      in our first visualization correlate to another factor we dont see? After creating this
+      in our first visualization correlate to another factor we dont see? To investigate, we created an affordability ratio for each city by dividing the average nightly price by the average daily net salary. This tells us how many days of local wages one night actually costs. After creating this
       scatterplot, which compares the monthly average net salary of our selected cities to the
       average nightly price of their AirBnBs (with exact data made visible through tooltips),
       we can see a vaguely upward trend in which the price of an AirBnB generally stays the same
@@ -63,8 +66,10 @@
 
   <div class="viz-block">
     <h3> 3. Average Price by Room Type and Distance from City Center: How Does Distance from the City Center Interact with Room Type to Determine Price?</h3>
+    <p><strong>Description:</strong> This faceted area chart maps distance from city center to x-position and average price to y-position, with separate panels per room type so individual price decay curves are not obscured by overlap.</p>
+<p><strong>Interaction:</strong> Click and drag on any panel to select a distance range and see the average price and percentage of listings in that selection update dynamically below. This gives viewers the flexibility to zoom into specific distance bands and compare price behavior across any custom selection they choose.</p>
     <iframe src="charts/chart3Container.html"></iframe>
-    <p>Takeaway: Once we’d established a connection between location and price, we moved on to
+    <p> <strong>Takeaway:</strong> Once we’d established a connection between location and price, we moved on to
       explore the products themselves, or the room types for AirBnBs. Although we assumed there was
       definitely some connection between the rooms and the price, we wouldn’t know what that
       connection was until it was made visible. This visualization produces three line/area graphs
@@ -80,8 +85,10 @@
 
   <div class="viz-block">
     <h3> 4. Average Price by Room Type and Distance from Public Transit: Does Proximity to Public Transportation Independently Influence Airbnb Pricing?</h3>
+    <p><strong>Description:</strong> This heatmap maps city to y-position and metro distance band paired with room type to x-position, with color intensity encoding average price because the grid structure makes position unavailable for the price variable.</p>
+<p><strong>Interaction:</strong> Click any cell to filter the linked bar chart below, or shift-click to compare multiple city and room type combinations. This allows viewers to isolate specific segments and directly compare average prices across any combination of city, distance band, and room type.</p>
     <iframe src="charts/chart4.html"></iframe>
-    <p>Takeaway: So far, we’ve shown that price data is affected by the general location of an AirBnB,
+    <p> <strong>Takeaway: </strong> So far, we’ve shown that price data is affected by the general location of an AirBnB,
       the distance of the AirBnB from the central area of a city, and the room type of the AirBnB itself.
       Our next goal was to determine how much transportation played a role in the price listings of AirBnBs.
       In this visualization, which takes data from the average price total per AirBnB roomtype and
@@ -94,8 +101,10 @@
 
   <div class="viz-block">
     <h3> 5. Guest Satisfaction Scores and Nightly Prices on Weekdays vs. Weekends: Do Weekend Demand Premiums Affect Guest Satisfaction Across European Markets?</h3>
+    <p><strong>Description:</strong> This grouped bar chart maps city to x-position and bar height to median price or satisfaction score, with color encoding day type to allow direct weekday to weekend comparison per city.</p>
+<p><strong>Interaction:</strong> Use the radio buttons to toggle between the price view and the satisfaction score view. This allows viewers to compare whether satisfaction scores differ between weekday and weekend stays and examine whether price changes based on timing correspond to any meaningful change in guest experience.</p>
     <iframe src="charts/chart5.html"></iframe>
-    <p>Takeaway: For our final visualization, we intended to focus on how often customers
+    <p> <strong>Takeaway: </strong> For our final visualization, we intended to focus on how often customers
       were satisfied with their AirBnBs given weekend premiums (the period during which
       AirBnBs are more expensive due to higher demand). This grouped bar chart, which includes a
       toggle for switching between guest satisfaction scores and weekly prices, shows the general
