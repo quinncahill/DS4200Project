@@ -21,8 +21,10 @@ d3.csv("airbnb.csv").then(data => {
 
     const container = d3.select("#charts");
 
-    // ---- USED FOR COLORS?
-    const colors = ["#1f77b4", "#ff7f0e", "#2ca02c"];
+    // ---- USED FOR COLORS
+    const colors = ['#1f77b4', '#ff7f0e', '#2ca02c'];
+
+    let colorIndex = 0;
 
     roomTypes.forEach(room => {
         const roomData = data.filter(d => d.room_type === room);
@@ -76,13 +78,18 @@ d3.csv("airbnb.csv").then(data => {
         svg.append("path")
             .datum(bins)
             .attr("class", "area")
+            .attr("fill", colors[colorIndex])
             .attr("d", area);
 
         svg.append("path")
             .datum(bins)
             .attr("class", "line")
+            .attr("stroke", colors[colorIndex])
+            .attr("fill", "none")
+            .attr("stroke-width", 2)
             .attr("d", line);
 
+        colorIndex = colorIndex + 1;
         // Axes Start Here.
         svg.append("g")
             .attr("transform", `translate(0,${height - margin.bottom})`)
