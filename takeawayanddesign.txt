@@ -59,6 +59,10 @@ charging more on weekends also score higher on satisfaction without needing to
 cross-reference two separate charts.
 
 Feedback from the peer review:
-The main feedback we got from the peer review is ….
-The changes we have made includes …
-The reason we did not change … is …
+The main feedback we got from the peer review is to improve the website itself.
+
+The changes we have made includes updating V5 to mean instead of median for consistency.
+
+The reason we did not change the website is there were actually some people who said 
+they liked how simple it was. It was straightforward and allowed the visualizations 
+to be the main focal point for the viewers, which was our goal.
