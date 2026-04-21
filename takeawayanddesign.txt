@@ -1,1 +1,64 @@
-two paragraphs per viz, one for design idea and one for takeaways
+DS4200 Project Description:
+Project website link: https://quinncahill.github.io/DS4200Project/
+Notes to the grading TA: Github Link with code: https://github.com/quinncahill/DS4200Project
+Design ideas:
+
+1. Price Distribution Box Plot 
+Our first visualization is a box plot that provides an 
+overview of nightly Airbnb price distributions across 10 European cities. We place it at the 
+beginning so the audience can quickly understand how markets differ before exploring why. 
+The primary mark is box and whisker, and the channels are horizontal position for price and 
+vertical position for city, sorted by median price so viewers can immediately rank markets. 
+A single color is used since room type is not encoded here — the focus is on city-level 
+comparison. Tooltips are included because box plots are difficult to read precisely at a 
+glance.
+
+2. Affordability Scatter Plot 
+The second visualization extends the city-level overview by 
+examining whether price differences correlate with local wage levels. A scatter plot is 
+appropriate because both salary and price are continuous quantitative variables and the 
+task is to identify a correlation pattern. The mark is point, and the primary channels are 
+horizontal position for salary and vertical position for price. Color encodes a derived 
+variable, the affordability ratio, on a red-to-green diverging scale so viewers can 
+immediately identify which cities are most and least affordable relative to local wages 
+without calculating anything. Tooltips are included because color communicates pattern but 
+cannot give precise values.
+
+3. Faceted Area Chart 
+The third visualization explores how distance from the city center 
+interacts with room type to determine price. We chose a faceted area chart because placing 
+all three room types in one chart would cause overlapping curves that obscure individual 
+slopes. The mark is area, and the channels are horizontal position for distance and vertical 
+position for average price. The chart is faceted by room type so each decay curve is 
+readable on its own. Color encodes room type within each panel to reinforce category 
+identity. A brush selection interaction is included so viewers can isolate any distance 
+range and see the average price and percentage of listings in that window update dynamically 
+below.
+
+4. Heatmap with Linked Bar Chart 
+The fourth visualization tests whether metro proximity 
+independently influences price beyond city center distance. A heatmap is appropriate because 
+it encodes three variables simultaneously in a compact grid. The mark is rectangle, and the 
+channels are vertical position for city and horizontal position for the distance band and 
+room type combination. Color intensity on a yellow-to-red scale encodes average price 
+because the grid structure makes position unavailable for the price variable. A 
+click-to-filter interaction links the heatmap to a bar chart below, which shows how all 
+cities compare for any selected distance band and room type. The heatmap gives the broad 
+overview and the bar chart gives the precise city-level comparison the heatmap alone cannot 
+provide.
+
+5. Grouped Bar Chart with Toggle 
+The fifth visualization examines whether weekend price 
+premiums correspond to any change in guest satisfaction. A grouped bar chart is 
+appropriate because bar height is the most accurate channel for magnitude comparison across 
+discrete categories, and grouping by day type makes the weekday-to-weekend difference 
+immediate per city. The mark is bar, and the channels are horizontal position for city, bar 
+height for the metric value, and color for day type. A radio toggle switches the y-axis 
+between price and satisfaction views, allowing viewers to directly test whether cities 
+charging more on weekends also score higher on satisfaction without needing to 
+cross-reference two separate charts.
+
+Feedback from the peer review:
+The main feedback we got from the peer review is ….
+The changes we have made includes …
+The reason we did not change … is …
