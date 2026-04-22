@@ -1,5 +1,5 @@
-const width = 500;
-const height = 250;
+const width = 270;
+const height = 300;
 const margin = { top: 20, right: 20, bottom: 40, left: 50 };
 
 d3.csv("airbnb.csv").then(data => {
